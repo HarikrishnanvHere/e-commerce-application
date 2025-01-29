@@ -33,6 +33,7 @@ model User {
   cartItems CartItem[]
   orders    Order[]
   orderedItems OrderedItem[]
+ paswordRequests PasswordRequest[]
 
   @@map("users")
 }
@@ -104,4 +105,15 @@ model OrderedItem {
   updatedAt DateTime @updatedAt
 
   @@map("ordered-items")
+}
+
+model PasswordRequest {
+  id        String @id
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  isActive  Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("password-requests")
 }

@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/request/
+Content-Type: application/json
+
+{
+  "toMail": "itsmeharikrishnanv@gmail.com"
+  }
+###

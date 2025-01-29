@@ -12,6 +12,16 @@ POST http://localhost:3000/api/auth/signup
 Content-Type: application/json
 
 {
+  "name": "harikrishnan",
+  "email": "itsmeharikrishnanv@gmail.com",
+  "password": "12345678"
+  }
+###
+
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
   "password": "hari"
   }
 ###
@@ -30,8 +40,8 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "harikrishnan@gmail.com",
-  "password": "1234567"
+  "email": "itsmeharikrishnanv@gmail.com",
+  "password": "123456789"
   }
 ###
 

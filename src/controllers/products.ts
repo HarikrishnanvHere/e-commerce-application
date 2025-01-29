@@ -30,10 +30,7 @@ export const updateProduct = async (req: Request, res: Response) => {
     });
     res.json(updatedProduct);
   } catch (err) {
-    throw new NotFoundException(
-      "Product Not Found!",
-      ErrorCode.PRODUCT_NOT_FOUND
-    );
+    throw new NotFoundException("Product Not Found!", ErrorCode.PRODUCT_NOT_FOUND);
   }
 };
 
@@ -46,10 +43,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
     });
     res.json(deletedProduct);
   } catch (err) {
-    throw new NotFoundException(
-      "Product Not Found!",
-      ErrorCode.PRODUCT_NOT_FOUND
-    );
+    throw new NotFoundException("Product Not Found!", ErrorCode.PRODUCT_NOT_FOUND);
   }
 };
 
@@ -69,12 +63,6 @@ export const getProductById = async (req: Request, res: Response) => {
     });
     res.status(200).json(product);
   } catch (err) {
-    
-    throw new NotFoundException(
-      "Product Not Found!",
-      ErrorCode.PRODUCT_NOT_FOUND
-    );
+    throw new NotFoundException("Product Not Found!", ErrorCode.PRODUCT_NOT_FOUND);
   }
 };
-
-
