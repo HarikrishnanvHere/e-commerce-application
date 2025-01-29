@@ -1,0 +1,43 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTczNzk3NDYxOH0.mJGF6K042bxVM3j0Bk-xbCrBMi2dANamHr-IVkqKHXQ
+
+POST http://localhost:3000/api/cart/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "quantity": 3
+  }
+###
+
+POST http://localhost:3000/api/cart/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "quantity": 1
+  }
+###
+
+
+DELETE http://localhost:3000/api/cart/5
+authorization: {{token}}
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3000/api/cart/6
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "quantity": 10
+  }
+###
+
+GET http://localhost:3000/api/cart/
+authorization: {{token}}
+Content-Type: application/json
+
+###

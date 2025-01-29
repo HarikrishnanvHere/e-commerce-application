@@ -1,0 +1,50 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3Mzc5Njg3NTd9.zDBwm1jY69SeppMtrwsQ-iL0KQR3XDtD-bbIQbhMETg
+//Adding 1st address
+POST http://localhost:3000/api/address/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+ "lineOne": "no xyz",
+ "lineTwo": "abc street",
+ "city": "Indore",
+ "country": "India",
+ "pincode": "689124"
+}
+###
+
+//should throw error
+POST http://localhost:3000/api/address/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+ "lineOne": "a",
+ "lineTwo": "b",
+ "city": "c"
+}
+###
+
+//should delete address
+DELETE http://localhost:3000/api/address/1
+authorization: {{token}}
+Content-Type: application/json
+
+###
+
+//should return list of address belonging to the logged in user
+GET http://localhost:3000/api/address/
+authorization: {{token}}
+Content-Type: application/json
+
+###
+
+//should update user
+PUT http://localhost:3000/api/address/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+ "defaultShippingAddress": 6,
+ "defaultBillingAddress": 6
+}

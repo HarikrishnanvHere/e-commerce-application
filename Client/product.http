@@ -1,0 +1,43 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTczNzk3NDYxOH0.mJGF6K042bxVM3j0Bk-xbCrBMi2dANamHr-IVkqKHXQ
+//Adding 1st product
+POST http://localhost:3000/api/products/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "name": "Hoody",
+  "description": "Grey Woolen Hoody",
+  "price": "3000",
+  "tags": ["Adidas", "Winter-wear", "Athletic"]
+  }
+###
+
+//Editing added product
+PUT http://localhost:3000/api/products/15
+authorization: {{token}}
+Content-Type: application/json
+
+{  
+  "name": "Hoodie",
+  "description": "Grey Woolen Hoodie",
+  "tags": ["Adidas", "Winter-wear", "Zipped"]
+    }
+###
+
+//Deleting added product
+
+DELETE http://localhost:3000/api/products/14
+authorization: {{token}}
+Content-Type: application/json
+###
+
+GET http://localhost:3000/api/products?skip=3
+authorization: {{token}}
+Content-Type: application/json
+###
+
+GET http://localhost:3000/api/products/13
+authorization: {{token}}
+Content-Type: application/json
+###
+

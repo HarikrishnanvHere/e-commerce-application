@@ -1,0 +1,32 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTczNzk3NDYxOH0.mJGF6K042bxVM3j0Bk-xbCrBMi2dANamHr-IVkqKHXQ
+
+GET http://localhost:3000/api/order/
+authorization: {{token}}
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/api/order/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "order_id": "order_PpCSixmvJqJiFt",
+  "payment_id": "abc"
+  }
+###
+
+POST http://localhost:3000/api/order/
+authorization: {{token}}
+Content-Type: application/json
+
+{
+  "order_id": "order_PpAWuFynDK3jqm"
+  }
+###
+
+GET http://localhost:3000/api/order/get/
+authorization: {{token}}
+Content-Type: application/json
+
+###
