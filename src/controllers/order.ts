@@ -6,7 +6,6 @@ import { RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET } from "../secret";
 
 const key_id_ = RAZORPAY_KEY_ID;
 const key_secret_ = RAZORPAY_KEY_SECRET;
-let order_id;
 
 export const createOrder = async (req: Request, res: Response) => {
   try {

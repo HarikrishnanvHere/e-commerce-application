@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-const app: Application = express();
+export const app: Application = express();
 app.use(express.json());
 
 import { PrismaClient } from "@prisma/client";
@@ -15,6 +15,6 @@ app.use("/api", routes);
 
 app.use(errorMiddleware);
 
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log("Server is running on port 3000");
 });
