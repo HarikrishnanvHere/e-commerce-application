@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 
-DELETE http://localhost:3000/api/cart/5
+DELETE http://localhost:3000/api/cart/14
 authorization: {{token}}
 Content-Type: application/json
 
