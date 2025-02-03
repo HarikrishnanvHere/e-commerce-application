@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTczNzk3NDYxOH0.mJGF6K042bxVM3j0Bk-xbCrBMi2dANamHr-IVkqKHXQ
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJpYXQiOjE3Mzg1NzAxOTN9.gnUCq4B9FkEW4J3piXWVpfP9tjybe0YKytjerVH2kZA
 
 GET http://localhost:3000/api/order/
 authorization: {{token}}
@@ -11,7 +11,7 @@ authorization: {{token}}
 Content-Type: application/json
 
 {
-  "order_id": "order_PpCSixmvJqJiFt",
+  "order_id": "order_PrAllfC0u2zbn1",
   "payment_id": "abc"
   }
 ###

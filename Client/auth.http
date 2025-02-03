@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTczNzcxMjU2Nn0.B0f7s4owdUC_wKl1Evjxdarmi-xG6XvO-pzFHFx4Mxk
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJpYXQiOjE3Mzg1NzA4NDN9.UWwzaHHBJUZdpUdjKOG2j1BkvBBJqjCgBOko0bGzO9I
 
 GET http://localhost:3000/api/auth/me/
 authorization: {{token}}

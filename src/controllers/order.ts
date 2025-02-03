@@ -16,6 +16,7 @@ export const createOrder = async (req: Request, res: Response) => {
     });
 
     const amount = req.user.total;
+    console.log(amount);
     rzp.orders.create({ amount: amount, currency: "INR" }, async (err, order) => {
       if (err) {
         console.log("jjjjjjjjjjj", err);
