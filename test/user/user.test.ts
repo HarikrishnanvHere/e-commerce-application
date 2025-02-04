@@ -1,5 +1,15 @@
 import request from "supertest";
-import { app, server } from "../../src/index";
+import { app, prismaClient, server } from "../../src/index";
+
+// Create a mock Prisma client
+
+const mockUser = { name: "abc", email: "abcde.rko@gmail.com", password: "abcdefghi" };
+
+const spy = jest.spyOn(prismaClient.user, "create").mockResolvedValue({
+  name: "abc",
+  email: "abcde.rko@gmail.com",
+  password: "abcdefghi",
+} as any);
 
 jest.mock("jsonwebtoken", () => ({
   sign: () => {
@@ -15,14 +25,11 @@ jest.mock("jsonwebtoken", () => ({
 describe("User model tests", () => {
   describe("TestCase for Creation of User", () => {
     it("should create the user and return the created data", async () => {
-      const actual = await request(app).post("/api/auth/signup").send({
-        name: "abc",
-        email: "abcde.rko@gmail.com",
-        password: "abcdefghi",
-      });
-      console.log(actual.body);
+      const actual = await request(app).post("/api/auth/signup").send(mockUser);
+      //console.log(actual.body);
       expect(actual.status).toBe(200);
       expect(actual.body.name).toBe("abc");
+      spy.mockRestore();
     });
 
     it("should return error if the data is already present", async () => {
@@ -31,7 +38,7 @@ describe("User model tests", () => {
         email: "abcde.rko@gmail.com",
         password: "abcdefghi",
       });
-      //console.log(actual);
+      console.log(actual);
       expect(actual.status).toBe(500);
     });
   });
