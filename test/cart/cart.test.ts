@@ -13,6 +13,10 @@ const spy = jest.spyOn(prismaClient.cartItem, "delete").mockResolvedValue({
   success: true,
 } as any);
 
+const spy2 = jest.spyOn(prismaClient.user, "update").mockResolvedValue({
+  success: true,
+} as any);
+
 describe("cart Model Tests", () => {
   it("should add the product to the cart along with its quantity", async () => {
     const actual = await request(app).post("/api/cart/").set({ authorization: "abc" }).send({
